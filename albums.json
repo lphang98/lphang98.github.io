@@ -1,11 +1,25 @@
 [
   {
     "id": "1",
-    "title": "Abbey Road",
-    "artist": "The Beatles",
-    "genre": "Rock",
-    "tracks": ["Come Together", "Something", "Here Comes the Sun"],
-    "description": "Abbey Road is the eleventh studio album by the English rock band the Beatles.",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg"
+    "title": "Chet Baker Sings",
+    "artist": "Chet Baker",
+    "genre": "Jazz",
+    "tracks": [
+      "That Old Feeling",
+      "It's Always You",
+      "Like Someone in Love",
+      "My Ideal",
+      "I've NeverBeen in Love Before",
+      "My Buddy",
+      "But Not For Me",
+      "Time After Time",
+      "I Get Along Without You Very Well",
+      "There Will Never Be Another You",
+      "The Thrill is Gone",
+      "I Fall in Love Too Easily",
+      "Look for the Silver Lining"
+    ],
+    "description": "Blue Note의 Tone Poet 시리즈로 재발매된 이 앨범은, 재즈 트럼페터 겸 보컬리스트 Chet Baker의 목소리로 듣는 감미로운 스탠다드 넘버 컬렉션입니다. 부드럽고 나른한 그의 음색은 LP로 들을 때 더욱 따뜻하게 다가옵니다.",
+    "cover": "https://m.media-amazon.com/images/I/71FVKyYt2hL._UF1000,1000_QL80_.jpg"
   }
 ]
