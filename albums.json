@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1",
+    "title": "Abbey Road",
+    "artist": "The Beatles",
+    "genre": "Rock",
+    "tracks": ["Come Together", "Something", "Here Comes the Sun"],
+    "description": "Abbey Road is the eleventh studio album by the English rock band the Beatles.",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg"
+  }
+]

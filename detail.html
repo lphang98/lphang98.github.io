@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Album Details</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="album-detail"></div>
+  <script>
+    const album = JSON.parse(localStorage.getItem('selectedAlbum'));
+    const container = document.getElementById('album-detail');
+    if (album) {
+      container.innerHTML = `
+        <h1>${album.title}</h1>
+        <h2>${album.artist}</h2>
+        <img src="${album.cover}" alt="${album.title}" />
+        <p><strong>Genre:</strong> ${album.genre}</p>
+        <p><strong>Description:</strong> ${album.description}</p>
+        <h3>Tracks:</h3>
+        <ul>${album.tracks.map(track => `<li>${track}</li>`).join('')}</ul>
+        <a href="index.html">Back to list</a>
+      `;
+    }
+  </script>
+</body>
+</html>

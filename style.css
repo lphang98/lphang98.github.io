@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+}
+#album-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.album {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+}
+.album img {
+  width: 100%;
+  height: auto;
+}
