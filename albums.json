@@ -149,5 +149,109 @@
       "Godspeed"
     ],
     "cover": "https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg"
+  },
+  {
+    "title": "Timely!!",
+    "artist": "Anri",
+    "genre": [
+      "City Pop"
+    ],
+    "description": "Anri의 대표작이자 일본 시티팝을 상징하는 앨범 중 하나. 프로듀서 Toshiki Kadomatsu와 함께 만든 세련된 도시 감성이 특징.",
+    "tracks": [
+      "I Can't Stop the Loneliness",
+      "Shyness Boy",
+      "Driving My Love",
+      "Whisper in the Rain",
+      "Goodbye Boogie Dance",
+      "Lost Love in the Rain",
+      "Heartbreak",
+      "Windy Summer",
+      "Remember Summer Days"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b9/Anri_Timely.jpg"
+  },
+  {
+    "title": "Heaven Beach",
+    "artist": "Anri",
+    "genre": [
+      "City Pop"
+    ],
+    "description": "청량하고 트로피컬한 감성이 인상적인 Anri의 시티팝 명반. 여름과 바다를 배경으로 한 곡들이 수록되어 있다.",
+    "tracks": [
+      "A Hope from Sad Street",
+      "Heaven Beach",
+      "Shyness Boy",
+      "Raspberry Wind",
+      "Driving My Love",
+      "Fly By Day",
+      "Remember Summer Days",
+      "I Can’t Stop the Loneliness",
+      "Summer Candles"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/3/36/Anri_HeavenBeach.jpg"
+  },
+  {
+    "title": "Bi·Ki·Ni",
+    "artist": "Anri",
+    "genre": [
+      "City Pop"
+    ],
+    "description": "1983년에 발매된 Anri의 여름을 담은 명반. 타이틀처럼 가볍고 밝은 분위기의 곡들이 가득하다.",
+    "tracks": [
+      "Catch the Wind",
+      "Summer Days",
+      "Bi·Ki·Ni",
+      "Beach Girl",
+      "Moonlight Beach",
+      "Good-Night for You",
+      "Last Summer Whisper",
+      "Sunset Beach Hotel",
+      "Remember Summer Days (Reprise)"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/f/f5/Anri_Bikini.jpg"
+  },
+  {
+    "title": "Spacy",
+    "artist": "Tatsuro Yamashita",
+    "genre": [
+      "City Pop",
+      "Funk",
+      "Soul"
+    ],
+    "description": "야마시타 타츠로의 초기 대표작으로, 훵크한 그루브와 우주적인 분위기를 담은 실험적인 시티팝 앨범.",
+    "tracks": [
+      "Love Space",
+      "Music Book",
+      "Candy",
+      "Dancer",
+      "Solid Slider",
+      "Yellow Cab",
+      "Spacey",
+      "Morning Glory",
+      "Silent Screamer"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/f/f6/TatsuroYamashita_Spacy.jpg"
+  },
+  {
+    "title": "RIDE ON TIME",
+    "artist": "Tatsuro Yamashita",
+    "genre": [
+      "City Pop",
+      "Pop"
+    ],
+    "description": "야마시타 타츠로의 가장 널리 알려진 명반 중 하나. 타이틀곡 'RIDE ON TIME'은 일본 시티팝의 상징적인 곡으로 자리 잡았다.",
+    "tracks": [
+      "Ride on Time",
+      "Rainy Walk",
+      "My Sugar Babe",
+      "Daydream",
+      "Silent Screamer",
+      "Clouds",
+      "Instrumental",
+      "Sunshine - Love Celebration",
+      "Interlude",
+      "My Sugar Babe (Reprise)"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/3/31/TatsuroYamashita_RideOnTime.jpg"
   }
 ]
