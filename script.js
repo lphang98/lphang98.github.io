@@ -109,3 +109,44 @@ document.addEventListener("DOMContentLoaded", () => {
     card.appendChild(label);
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const genresAvailable = ["All", "Jazz", "City Pop", "Pop", "R&B", "Alternative", "Bossa Nova"];
+  const genreColors = {
+    "Jazz": "#2b7a78",
+    "City Pop": "#d7263d",
+    "Pop": "#673ab7",
+    "R&B": "#ff5722",
+    "Alternative": "#ff5722",
+    "Bossa Nova": "#009688"
+  };
+
+  const albumList = document.getElementById("album-list");
+  const originalAlbums = Array.from(albumList.children);
+
+  // 필터 버튼 바 생성
+  const filterBar = document.createElement("div");
+  filterBar.className = "filter-bar";
+
+  genresAvailable.forEach(genre => {
+    const btn = document.createElement("button");
+    btn.className = "filter-btn";
+    btn.textContent = genre;
+    btn.onclick = () => {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      albumList.innerHTML = "";
+
+      const filtered = genre === "All"
+        ? originalAlbums
+        : originalAlbums.filter(card => {
+            const g = card.querySelector("p")?.textContent || "";
+            return g.includes(genre);
+          });
+
+      filtered.forEach(card => albumList.appendChild(card));
+    };
+    filterBar.appendChild(btn);
+  });
+
+  albumList.parentNode.insertBefore(filterBar, albumList);
+});

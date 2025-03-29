@@ -79,3 +79,26 @@ body {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
+
+/* 필터 버튼 */
+.filter-bar {
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  margin: 0 5px;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
