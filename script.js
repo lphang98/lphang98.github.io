@@ -17,12 +17,12 @@ function renderAlbums(albums) {
   albums.forEach(album => {
     const div = document.createElement('div');
     div.className = 'album';
-    div.setAttribute('data-genre', album.genre);
+    div.setAttribute('data-genre', (album.genre || []).join(', '));
 
     div.innerHTML = `
       <img src="${album.cover}" alt="${album.title}">
       <h3>${album.title}</h3>
-      <p>${album.genre}</p>
+      <p>${(album.genre || []).join(' / ')}</p>
     `;
 
     // 카드 전체 클릭 시 상세페이지 이동
@@ -31,16 +31,21 @@ function renderAlbums(albums) {
       window.location.href = 'detail.html';
     };
 
-    // 장르 스타일링
+    // 장르별 색상 처리
     const genreColors = {
       "Jazz": "#2b7a78",
       "City Pop": "#d7263d",
       "Pop": "#673ab7",
       "R&B": "#ff5722",
       "Alternative": "#ff5722",
-      "Bossa Nova": "#009688"
+      "Bossa Nova": "#009688",
+      "Indie": "#607d8b",
+      "Folk": "#6d4c41",
+      "Live": "#3f51b5",
+      "K-pop": "#e91e63",
+      "Cover": "#9e9e9e"
     };
-    const genres = (album.genre || "").split(",").map(g => g.trim());
+    const genres = album.genre || [];
     const primaryColor = genreColors[genres[0]] || "#aaa";
     div.style.borderColor = primaryColor;
 
@@ -66,7 +71,7 @@ function setupSearch(albums) {
       keywords.every(kw =>
         album.title.toLowerCase().includes(kw) ||
         album.artist.toLowerCase().includes(kw) ||
-        album.genre.toLowerCase().includes(kw) ||
+        (album.genre || []).some(g => g.toLowerCase().includes(kw)) ||
         album.tracks.some(track => track.toLowerCase().includes(kw))
       )
     );
@@ -75,9 +80,11 @@ function setupSearch(albums) {
 }
 
 function setupGenreFilter(albums) {
-  const genresAvailable = ["All", ...new Set(albums.flatMap(a => a.genre?.split(",").map(g => g.trim()) || []))];
-  const albumList = document.getElementById("album-list");
+  const allGenres = new Set();
+  albums.forEach(a => (a.genre || []).forEach(g => allGenres.add(g)));
+  const genresAvailable = ["All", ...allGenres];
 
+  const albumList = document.getElementById("album-list");
   const filterBar = document.createElement("div");
   filterBar.className = "filter-bar";
 
@@ -91,7 +98,7 @@ function setupGenreFilter(albums) {
 
       const filtered = genre === "All"
         ? albums
-        : albums.filter(album => album.genre.includes(genre));
+        : albums.filter(album => (album.genre || []).includes(genre));
       renderAlbums(filtered);
     };
     filterBar.appendChild(btn);
