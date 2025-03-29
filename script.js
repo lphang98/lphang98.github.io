@@ -1,41 +1,73 @@
+
 fetch('albums.json')
   .then(response => response.json())
   .then(data => {
     const stored = JSON.parse(localStorage.getItem('customAlbums') || '[]');
     const combined = [...data, ...stored];
-    renderAlbums(combined, stored);
-    setupSearch(combined, stored);
+    renderAlbums(combined);
+    setupSearch(combined);
+    setupGenreFilter(combined);
   });
 
-function renderAlbums(albums, storedAlbums) {
+function renderAlbums(albums) {
   const albumList = document.getElementById('album-list');
   if (!albumList) return;
   albumList.innerHTML = '';
+
   albums.forEach(album => {
     const div = document.createElement('div');
     div.className = 'album';
+    div.setAttribute('data-genre', album.genre);
+
     div.innerHTML = `
       <img src="${album.cover}" alt="${album.title}">
       <h3>${album.title}</h3>
-      <p>${album.artist}</p>
-      <button class="delete-btn" style="margin-top:10px;">🗑 삭제</button>
+      <p>${album.genre}</p>
+      <button class="delete-btn">🗑</button>
     `;
+
+    // 클릭 시 상세페이지
     div.querySelector('img').onclick = () => {
       localStorage.setItem('selectedAlbum', JSON.stringify(album));
       window.location.href = 'detail.html';
     };
-    div.querySelector('.delete-btn').onclick = () => {
+
+    // 삭제 버튼
+    div.querySelector('.delete-btn').onclick = (e) => {
+      e.stopPropagation();
       if (confirm(`'${album.title}' 앨범을 삭제할까요?`)) {
-        const updated = storedAlbums.filter(a => a.id !== album.id);
+        const stored = JSON.parse(localStorage.getItem('customAlbums') || '[]');
+        const updated = stored.filter(a => a.id !== album.id);
         localStorage.setItem('customAlbums', JSON.stringify(updated));
         location.reload();
       }
     };
+
+    // 장르 스타일링
+    const genreColors = {
+      "Jazz": "#2b7a78",
+      "City Pop": "#d7263d",
+      "Pop": "#673ab7",
+      "R&B": "#ff5722",
+      "Alternative": "#ff5722",
+      "Bossa Nova": "#009688"
+    };
+    const genres = (album.genre || "").split(",").map(g => g.trim());
+    const primaryColor = genreColors[genres[0]] || "#aaa";
+    div.style.borderColor = primaryColor;
+
+    // 상단 라벨
+    const label = document.createElement("div");
+    label.className = "genre-label";
+    label.style.background = primaryColor;
+    label.textContent = genres.join(" / ");
+    div.appendChild(label);
+
     albumList.appendChild(div);
   });
 }
 
-function setupSearch(albums, storedAlbums) {
+function setupSearch(albums) {
   const searchInput = document.getElementById('search');
   if (!searchInput) return;
 
@@ -50,80 +82,14 @@ function setupSearch(albums, storedAlbums) {
         album.tracks.some(track => track.toLowerCase().includes(kw))
       )
     );
-    renderAlbums(filtered, storedAlbums);
+    renderAlbums(filtered);
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const genreColors = {
-    "Jazz": "#2b7a78",
-    "City Pop": "#d7263d",
-    "Pop": "#673ab7",
-    "R&B": "#ff5722",
-    "Alternative": "#ff5722",
-    "Bossa Nova": "#009688"
-  };
-
-  const cards = document.querySelectorAll(".album");
-  cards.forEach(card => {
-    const genreText = card.querySelector("p")?.textContent;
-    if (!genreText) return;
-
-    const genres = genreText.split(",").map(g => g.trim());
-    const colors = genres.map(g => genreColors[g] || "#ccc");
-    if (colors.length === 1) {
-      card.style.borderColor = colors[0];
-    } else {
-      // 여러 색을 혼합한 그라디언트 테두리
-      card.style.borderImage = `linear-gradient(to right, ${colors.join(",")}) 1`;
-      card.style.borderStyle = "solid";
-    }
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const genreColors = {
-    "Jazz": "#2b7a78",
-    "City Pop": "#d7263d",
-    "Pop": "#673ab7",
-    "R&B": "#ff5722",
-    "Alternative": "#ff5722",
-    "Bossa Nova": "#009688"
-  };
-
-  const cards = document.querySelectorAll(".album");
-  cards.forEach(card => {
-    const genreText = card.querySelector("p")?.textContent;
-    if (!genreText) return;
-
-    const genres = genreText.split(",").map(g => g.trim());
-    const primaryColor = genreColors[genres[0]] || "#aaa";
-
-    // 테두리 컬러 강조
-    card.style.borderColor = primaryColor;
-
-    // 상단 라벨 생성
-    const label = document.createElement("div");
-    label.className = "genre-label";
-    label.style.background = primaryColor;
-    label.textContent = genres.join(" / ");
-    card.appendChild(label);
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const genresAvailable = ["All", "Jazz", "City Pop", "Pop", "R&B", "Alternative", "Bossa Nova"];
-  const genreColors = {
-    "Jazz": "#2b7a78",
-    "City Pop": "#d7263d",
-    "Pop": "#673ab7",
-    "R&B": "#ff5722",
-    "Alternative": "#ff5722",
-    "Bossa Nova": "#009688"
-  };
-
+function setupGenreFilter(albums) {
+  const genresAvailable = ["All", ...new Set(albums.flatMap(a => a.genre?.split(",").map(g => g.trim()) || []))];
   const albumList = document.getElementById("album-list");
-  const originalAlbums = Array.from(albumList.children);
 
-  // 필터 버튼 바 생성
   const filterBar = document.createElement("div");
   filterBar.className = "filter-bar";
 
@@ -134,19 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.onclick = () => {
       document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      albumList.innerHTML = "";
 
       const filtered = genre === "All"
-        ? originalAlbums
-        : originalAlbums.filter(card => {
-            const g = card.querySelector("p")?.textContent || "";
-            return g.includes(genre);
-          });
-
-      filtered.forEach(card => albumList.appendChild(card));
+        ? albums
+        : albums.filter(album => album.genre.includes(genre));
+      renderAlbums(filtered);
     };
     filterBar.appendChild(btn);
   });
 
   albumList.parentNode.insertBefore(filterBar, albumList);
-});
+}
