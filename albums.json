@@ -137,5 +137,59 @@
     "tracks": [],
     "description": "지나간 계절의 아쉬움을 담담하게 노래하는 위수의 작품.",
     "cover": "https://image.bugsm.co.kr/album/images/500/40663/4066372.jpg"
+  },
+  {
+    "title": "Love, Yerin",
+    "artist": "Yerin Baek",
+    "genre": "K-pop / Cover",
+    "description": "백예린의 감성을 담은 첫 커버 앨범. 다양한 원곡을 본인만의 색으로 재해석한 EP.",
+    "tracks": [
+      "걷는 마음",
+      "내 마음에 비친 내 모습",
+      "비도 오고 그래서",
+      "그대 내 맘에 들어오면은",
+      "섬 (Islands)",
+      "야간비행"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/00/YerinBaek_LoveYerin.jpg"
+  },
+  {
+    "title": "Our Love is Great",
+    "artist": "Yerin Baek",
+    "genre": "R&B / Pop",
+    "description": "서정적이고 진솔한 감성이 녹아든 백예린의 EP. 전곡 자작곡으로 구성되어 있으며, 한국대중음악상 올해의 앨범 수상작이다.",
+    "tracks": [
+      "야간비행",
+      "그건 아마 우리의 잘못은 아닐 거야",
+      "야간비행 (Inst.)",
+      "Dear my blue",
+      "Our love is great",
+      "내가 날 모르는 것처럼",
+      "지켜줄게"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b6/YerinBaek_OurLoveIsGreat.jpg"
+  },
+  {
+    "title": "Stars and Memories and Poetry",
+    "artist": "Shin Ji Hoon",
+    "genre": "Indie / Ballad",
+    "description": "별과 기억, 시를 주제로 한 신지훈의 서정적인 정규 앨범. 감성적인 사운드와 몽환적인 분위기가 특징이다.",
+    "tracks": [
+      "the deep sea",
+      "fly far away, above the clouds",
+      "lonely heart",
+      "a sky full of stars"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6d/ShinJiHoon_StarsAlbum.jpg"
+  },
+  {
+    "title": "지나간 여름을 안타까워마",
+    "artist": "WISUE",
+    "genre": "Indie / Folk",
+    "description": "지나간 여름의 감정을 섬세하게 담아낸 위수의 대표 싱글. 담담한 멜로디 속 아련함이 인상적이다.",
+    "tracks": [
+      "지나간 여름을 안타까워마"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/f/fc/Wisue_Summer.jpg"
   }
 ]
