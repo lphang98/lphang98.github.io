@@ -20,23 +20,22 @@ body {
   text-align: center;
   cursor: pointer;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 5px solid transparent;
-  background-clip: content-box;
-  box-shadow: inset 0 0 0 4px transparent;
+  border: 4px solid #ccc;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
 }
 
 .album:hover {
-  transform: scale(1.07);
-  box-shadow: 
-    inset 0 0 0 4px rgba(255, 255, 255, 0.8),
-    0 0 20px rgba(0, 0, 0, 0.3),
-    0 0 12px rgba(255, 255, 255, 0.5);
+  transform: scale(1.06);
+  background-color: #fffef2;
+  box-shadow: 0 0 24px rgba(255, 230, 130, 0.6);
 }
 
 .album img {
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
 .album h3 {
@@ -65,4 +64,18 @@ body {
 
 .album:hover .delete-btn {
   display: block;
+}
+
+/* 장르 라벨 */
+.genre-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
