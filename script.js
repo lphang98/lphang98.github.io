@@ -53,3 +53,30 @@ function setupSearch(albums, storedAlbums) {
     renderAlbums(filtered, storedAlbums);
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const genreColors = {
+    "Jazz": "#2b7a78",
+    "City Pop": "#d7263d",
+    "Pop": "#673ab7",
+    "R&B": "#ff5722",
+    "Alternative": "#ff5722",
+    "Bossa Nova": "#009688"
+  };
+
+  const cards = document.querySelectorAll(".album");
+  cards.forEach(card => {
+    const genreText = card.querySelector("p")?.textContent;
+    if (!genreText) return;
+
+    const genres = genreText.split(",").map(g => g.trim());
+    const colors = genres.map(g => genreColors[g] || "#ccc");
+    if (colors.length === 1) {
+      card.style.borderColor = colors[0];
+    } else {
+      // 여러 색을 혼합한 그라디언트 테두리
+      card.style.borderImage = `linear-gradient(to right, ${colors.join(",")}) 1`;
+      card.style.borderStyle = "solid";
+    }
+  });
+});

@@ -15,13 +15,14 @@ body {
 
 .album {
   background: white;
-  border: 1px solid #ddd;
   padding: 10px;
   width: 200px;
   text-align: center;
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid transparent;
+  background-clip: padding-box;
 }
 
 .album:hover {
@@ -61,10 +62,3 @@ body {
 .album:hover .delete-btn {
   display: block;
 }
-
-/* 장르별 색상 강조 */
-p:contains("Jazz") { color: #2b7a78; }
-p:contains("City Pop") { color: #d7263d; }
-p:contains("Pop") { color: #673ab7; }
-p:contains("R&B") { color: #ff5722; }
-p:contains("Bossa Nova") { color: #009688; }
