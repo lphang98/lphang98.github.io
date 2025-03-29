@@ -2,12 +2,12 @@
 fetch('albums.json')
   .then(response => response.json())
   .then(data => {
-    
+    const stored = JSON.parse(localStorage.getItem('customAlbums') || '[]');
     const combined = [...data, ...stored];
     renderAlbums(combined);
     setupSearch(combined);
     setupGenreFilter(combined);
-  );
+  });
 
 function renderAlbums(albums) {
   const albumList = document.getElementById('album-list');
@@ -20,29 +20,16 @@ function renderAlbums(albums) {
     div.setAttribute('data-genre', album.genre);
 
     div.innerHTML = `
-      <img src="${album.cover" alt="${album.title">
-      <h3>${album.title</h3>
-      <p>${album.genre</p>
-      <button class="delete-btn">🗑</button>
+      <img src="${album.cover}" alt="${album.title}">
+      <h3>${album.title}</h3>
+      <p>${album.genre}</p>
     `;
 
     // 카드 전체 클릭 시 상세페이지 이동
-    div.onclick = (e) => {
-      if (e.target.classList.contains("delete-btn")) return;
+    div.onclick = () => {
       localStorage.setItem('selectedAlbum', JSON.stringify(album));
       window.location.href = 'detail.html';
-    ;
-
-    
-    
-      
-      
-        
-        
-        
-        
-      
-    ;
+    };
 
     // 장르 스타일링
     const genreColors = {
@@ -52,7 +39,7 @@ function renderAlbums(albums) {
       "R&B": "#ff5722",
       "Alternative": "#ff5722",
       "Bossa Nova": "#009688"
-    ;
+    };
     const genres = (album.genre || "").split(",").map(g => g.trim());
     const primaryColor = genreColors[genres[0]] || "#aaa";
     div.style.borderColor = primaryColor;
@@ -65,8 +52,8 @@ function renderAlbums(albums) {
     div.appendChild(label);
 
     albumList.appendChild(div);
-  );
-
+  });
+}
 
 function setupSearch(albums) {
   const searchInput = document.getElementById('search');
@@ -84,8 +71,8 @@ function setupSearch(albums) {
       )
     );
     renderAlbums(filtered);
-  );
-
+  });
+}
 
 function setupGenreFilter(albums) {
   const genresAvailable = ["All", ...new Set(albums.flatMap(a => a.genre?.split(",").map(g => g.trim()) || []))];
@@ -106,9 +93,9 @@ function setupGenreFilter(albums) {
         ? albums
         : albums.filter(album => album.genre.includes(genre));
       renderAlbums(filtered);
-    ;
+    };
     filterBar.appendChild(btn);
-  );
+  });
 
   albumList.parentNode.insertBefore(filterBar, albumList);
-
+}
