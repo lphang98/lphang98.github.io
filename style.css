@@ -21,11 +21,12 @@ body {
   text-align: center;
   cursor: pointer;
   position: relative;
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .album:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 .album img {
@@ -39,6 +40,8 @@ body {
 
 .album p {
   margin: 0 0 5px 0;
+  font-size: 0.9em;
+  font-weight: bold;
 }
 
 .delete-btn {
@@ -58,3 +61,10 @@ body {
 .album:hover .delete-btn {
   display: block;
 }
+
+/* 장르별 색상 강조 */
+p:contains("Jazz") { color: #2b7a78; }
+p:contains("City Pop") { color: #d7263d; }
+p:contains("Pop") { color: #673ab7; }
+p:contains("R&B") { color: #ff5722; }
+p:contains("Bossa Nova") { color: #009688; }
