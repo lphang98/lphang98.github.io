@@ -46,13 +46,18 @@ function renderAlbums(albums) {
       "Cover": "#9e9e9e"
     };
     const genres = album.genre || [];
-    const primaryColor = genreColors[genres[0]] || "#aaa";
-    div.style.borderColor = primaryColor;
+    const colors = genres.map(g => genreColors[g] || "#aaa");
+    if (colors.length > 1) {
+      div.style.borderImage = `linear-gradient(to right, ${colors.join(", ")}) 1`;
+      div.style.borderStyle = "solid";
+    } else {
+      div.style.borderColor = colors[0] || "#ccc";
+    }
 
     // 상단 라벨
     const label = document.createElement("div");
     label.className = "genre-label";
-    label.style.background = primaryColor;
+    label.style.background = colors[0] || "#aaa";
     label.textContent = genres.join(" / ");
     div.appendChild(label);
 
