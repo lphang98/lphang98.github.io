@@ -2,7 +2,10 @@
   {
     "title": "선물",
     "artist": "Yerin Baek",
-    "genre": "K-pop / Cover",
+    "genre": [
+      "K-pop",
+      "Cover"
+    ],
     "description": "백예린의 감성을 담은 첫 커버 앨범. 다양한 원곡을 본인만의 색으로 재해석한 EP.",
     "tracks": [
       "걷는 마음",
@@ -17,7 +20,11 @@
   {
     "title": "Turn on that Blue Vinyl",
     "artist": "Yerin Baek",
-    "genre": "Live / R&B / Pop",
+    "genre": [
+      "Live",
+      "R&B",
+      "Pop"
+    ],
     "description": "백예린의 첫 단독 콘서트 'Turn on that Blue Vinyl'의 실황을 담은 라이브 앨범.",
     "tracks": [],
     "cover": "https://upload.wikimedia.org/wikipedia/en/9/9e/YerinBaek_TurnOnThatBlueVinyl.jpg"
@@ -25,7 +32,10 @@
   {
     "title": "별과 추억과 시",
     "artist": "Shin Ji Hoon",
-    "genre": "Indie / Ballad",
+    "genre": [
+      "Indie",
+      "Ballad"
+    ],
     "description": "신지훈의 첫 정규 앨범으로, 별과 추억, 시를 주제로 한 감성적인 곡들로 구성되어 있다.",
     "tracks": [
       "스물하나 열다섯",
@@ -44,7 +54,10 @@
   {
     "title": "지나간 여름을 안타까워마",
     "artist": "WISUE",
-    "genre": "Indie / Folk",
+    "genre": [
+      "Indie",
+      "Folk"
+    ],
     "description": "위수의 감성적인 싱글로, 지나간 여름에 대한 아쉬움을 노래한 곡이다.",
     "tracks": [
       "Dosi",
@@ -58,7 +71,9 @@
   {
     "title": "Kind of Blue",
     "artist": "Miles Davis",
-    "genre": "Jazz",
+    "genre": [
+      "Jazz"
+    ],
     "description": "재즈 역사상 가장 영향력 있는 앨범 중 하나. 즉흥성과 감성의 절묘한 조화.",
     "tracks": [
       "So What",
@@ -72,7 +87,9 @@
   {
     "title": "For You",
     "artist": "Tatsuro Yamashita",
-    "genre": "City Pop",
+    "genre": [
+      "City Pop"
+    ],
     "description": "야마시타 타츠로의 대표작. 도시적인 감성과 여름의 따뜻함이 어우러진 시티팝의 정수.",
     "tracks": [
       "Sparkle",
@@ -92,7 +109,10 @@
   {
     "title": "Braziliance!",
     "artist": "Marcos Valle",
-    "genre": "Bossa Nova / Jazz",
+    "genre": [
+      "Bossa Nova",
+      "Jazz"
+    ],
     "description": "마르코스 발레의 초기 명반. 브라질리언 리듬과 재즈의 세련된 조화.",
     "tracks": [
       "Crickets Sing for Anamaria",
@@ -113,7 +133,10 @@
   {
     "title": "Blonde",
     "artist": "Frank Ocean",
-    "genre": "R&B / Alternative",
+    "genre": [
+      "R&B",
+      "Alternative"
+    ],
     "description": "프랭크 오션의 감성과 실험성이 공존하는 수작. 시간의 흐름과 자아의 혼란을 담은 앨범.",
     "tracks": [
       "Nikes",
