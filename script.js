@@ -22,16 +22,15 @@ function renderAlbums(albums) {
     div.innerHTML = `
       <img src="${album.cover}" alt="${album.title}">
       <h3>${album.title}</h3>
-      <p>${(album.genre || []).join(' / ')}</p>
+      <p>${album.artist}</p>
     `;
 
-    // 카드 전체 클릭 시 상세페이지 이동
+    // 카드 클릭 시 상세페이지 이동
     div.onclick = () => {
       localStorage.setItem('selectedAlbum', JSON.stringify(album));
       window.location.href = 'detail.html';
     };
 
-    // 장르별 색상 처리
     const genreColors = {
       "Jazz": "#2b7a78",
       "City Pop": "#d7263d",
@@ -54,7 +53,6 @@ function renderAlbums(albums) {
       div.style.borderColor = colors[0] || "#ccc";
     }
 
-    // 상단 라벨
     const label = document.createElement("div");
     label.className = "genre-label";
     label.style.background = colors[0] || "#aaa";
