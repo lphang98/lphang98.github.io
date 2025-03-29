@@ -26,8 +26,9 @@ function renderAlbums(albums) {
       <button class="delete-btn">🗑</button>
     `;
 
-    // 클릭 시 상세페이지
-    div.querySelector('img').onclick = () => {
+    // 카드 전체 클릭 시 상세페이지 이동
+    div.onclick = (e) => {
+      if (e.target.classList.contains("delete-btn")) return;
       localStorage.setItem('selectedAlbum', JSON.stringify(album));
       window.location.href = 'detail.html';
     };
