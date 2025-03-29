@@ -7,7 +7,7 @@
   <style>
     #suggestions {
       border: 1px solid #ccc;
-      max-height: 150px;
+      max-height: 200px;
       overflow-y: auto;
       display: none;
       position: absolute;
@@ -22,19 +22,25 @@
     #suggestions div:hover {
       background-color: #eee;
     }
+    .disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
-  <h1>Add a New Album</h1>
+  <h1>앨범 검색 후 추가</h1>
+  <p>앨범 제목이나 가수명을 입력하고, 검색된 항목을 선택해 주세요!</p>
   <form id="albumForm">
-    <input type="text" placeholder="Title" id="title" required /><br />
+    <input type="text" placeholder="Search by title or artist" id="titleSearch" autocomplete="off" required /><br />
     <div id="suggestions"></div>
-    <input type="text" placeholder="Artist" id="artist" required /><br />
-    <input type="text" placeholder="Genre" id="genre" required /><br />
-    <textarea placeholder="Description" id="description"></textarea><br />
-    <input type="text" placeholder="Track list (comma-separated)" id="tracks" /><br />
-    <input type="text" placeholder="Cover image URL" id="cover" /><br />
-    <button type="submit">Add Album</button>
+    <input type="text" placeholder="Title" id="title" disabled /><br />
+    <input type="text" placeholder="Artist" id="artist" disabled /><br />
+    <input type="text" placeholder="Genre" id="genre" disabled /><br />
+    <textarea placeholder="Description" id="description" disabled></textarea><br />
+    <input type="text" placeholder="Track list (comma-separated)" id="tracks" disabled /><br />
+    <input type="text" placeholder="Cover image URL" id="cover" disabled /><br />
+    <button type="submit" id="submitBtn" class="disabled" disabled>➕ Add Album</button>
   </form>
   <a href="index.html">Back to Home</a>
 
@@ -48,11 +54,11 @@
         allAlbums = [...data, ...stored];
       });
 
-    const titleInput = document.getElementById('title');
+    const searchInput = document.getElementById('titleSearch');
     const suggestions = document.getElementById('suggestions');
 
-    titleInput.addEventListener('input', () => {
-      const query = titleInput.value.toLowerCase();
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
       const matches = allAlbums.filter(album =>
         album.title.toLowerCase().includes(query) ||
         album.artist.toLowerCase().includes(query)
@@ -69,6 +75,15 @@
             document.getElementById('description').value = album.description;
             document.getElementById('tracks').value = album.tracks.join(', ');
             document.getElementById('cover').value = album.cover;
+
+            // 활성화
+            ['title', 'artist', 'genre', 'description', 'tracks', 'cover'].forEach(id => {
+              document.getElementById(id).disabled = false;
+            });
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = false;
+            btn.classList.remove('disabled');
+
             suggestions.style.display = 'none';
           };
           suggestions.appendChild(div);
