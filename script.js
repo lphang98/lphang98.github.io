@@ -33,11 +33,14 @@ function setupSearch(albums) {
 
   searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
+    const keywords = query.split(' ').filter(Boolean);
     const filtered = albums.filter(album =>
-      album.title.toLowerCase().includes(query) ||
-      album.artist.toLowerCase().includes(query) ||
-      album.genre.toLowerCase().includes(query) ||
-      album.tracks.some(track => track.toLowerCase().includes(query))
+      keywords.every(kw =>
+        album.title.toLowerCase().includes(kw) ||
+        album.artist.toLowerCase().includes(kw) ||
+        album.genre.toLowerCase().includes(kw) ||
+        album.tracks.some(track => track.toLowerCase().includes(kw))
+      )
     );
     renderAlbums(filtered);
   });
