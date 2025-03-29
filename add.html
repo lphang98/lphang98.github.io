@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add New Album</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Add a New Album</h1>
+  <form id="albumForm">
+    <input type="text" placeholder="Title" id="title" required /><br />
+    <input type="text" placeholder="Artist" id="artist" required /><br />
+    <input type="text" placeholder="Genre" id="genre" required /><br />
+    <textarea placeholder="Description" id="description"></textarea><br />
+    <input type="text" placeholder="Track list (comma-separated)" id="tracks" /><br />
+    <input type="text" placeholder="Cover image URL" id="cover" /><br />
+    <button type="submit">Add Album</button>
+  </form>
+  <a href="index.html">Back to Home</a>
+
+  <script>
+    document.getElementById('albumForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const album = {
+        id: Date.now().toString(),
+        title: document.getElementById('title').value,
+        artist: document.getElementById('artist').value,
+        genre: document.getElementById('genre').value,
+        description: document.getElementById('description').value,
+        tracks: document.getElementById('tracks').value.split(',').map(t => t.trim()),
+        cover: document.getElementById('cover').value
+      };
+
+      const stored = JSON.parse(localStorage.getItem('customAlbums') || '[]');
+      stored.push(album);
+      localStorage.setItem('customAlbums', JSON.stringify(stored));
+      alert('앨범이 추가되었어요!');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
