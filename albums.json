@@ -101,5 +101,41 @@
     ],
     "description": "블랙핑크 로제의 첫 솔로 싱글 앨범. 내면의 목소리를 담은 감성적인 곡들.",
     "cover": "https://upload.wikimedia.org/wikipedia/en/9/9c/Ros%C3%A9_-_R.png"
+  },
+  {
+    "id": "7",
+    "title": "Love, Yerin",
+    "artist": "백예린",
+    "genre": "Pop",
+    "tracks": [],
+    "description": "백예린의 감성을 담은 정규 앨범. 사랑과 계절의 흐름을 노래한다.",
+    "cover": "https://image.bugsm.co.kr/album/images/500/204301/20430199.jpg"
+  },
+  {
+    "id": "8",
+    "title": "Our Love is Great",
+    "artist": "백예린",
+    "genre": "Pop",
+    "tracks": [],
+    "description": "서정적인 멜로디와 깊은 감정이 어우러진 백예린의 대표작 중 하나.",
+    "cover": "https://image.bugsm.co.kr/album/images/500/202374/20237497.jpg"
+  },
+  {
+    "id": "9",
+    "title": "Stars and Memories and Poetry",
+    "artist": "신지훈",
+    "genre": "Indie",
+    "tracks": [],
+    "description": "별과 기억, 시를 테마로 한 신지훈의 감성적인 앨범.",
+    "cover": "https://image.bugsm.co.kr/album/images/500/40780/4078030.jpg"
+  },
+  {
+    "id": "10",
+    "title": "지나간 여름을 안타까워마",
+    "artist": "위수",
+    "genre": "Indie",
+    "tracks": [],
+    "description": "지나간 계절의 아쉬움을 담담하게 노래하는 위수의 작품.",
+    "cover": "https://image.bugsm.co.kr/album/images/500/40663/4066372.jpg"
   }
 ]
