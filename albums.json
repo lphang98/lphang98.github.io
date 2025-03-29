@@ -19,7 +19,87 @@
       "I Fall in Love Too Easily",
       "Look for the Silver Lining"
     ],
-    "description": "Blue Note의 Tone Poet 시리즈로 재발매된 이 앨범은, 재즈 트럼페터 겸 보컬리스트 Chet Baker의 목소리로 듣는 감미로운 스탠다드 넘버 컬렉션입니다. 부드럽고 나른한 그의 음색은 LP로 들을 때 더욱 따뜻하게 다가옵니다.",
+    "description": "Blue Note의 Tone Poet 시리즈로 재발매된 이 앨범은, 재즈 트럼페터 겸 보컬리스트 Chet Baker의 목소리로 듣는 감미로운 스탠다드 넘버 컬렉션입니다.",
     "cover": "https://img.discogs.com/P7El8sbpN9nsL7bfsOSWeZqJKFw=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13153924-1547963926-1010.jpeg.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Kind of Blue",
+    "artist": "Miles Davis",
+    "genre": "Jazz",
+    "tracks": [
+      "So What",
+      "Freddie Freeloader",
+      "Blue in Green",
+      "All Blues",
+      "Flamenco Sketches"
+    ],
+    "description": "재즈 역사상 가장 영향력 있는 앨범 중 하나. 쿨 재즈의 정수를 담은 마일스 데이비스의 명반.",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg"
+  },
+  {
+    "id": "3",
+    "title": "For You",
+    "artist": "Tatsuro Yamashita",
+    "genre": "City Pop",
+    "tracks": [
+      "Sparkle",
+      "Music Book",
+      "Morning Glory",
+      "Futari",
+      "Loveland, Island",
+      "Love Talkin'",
+      "Hey Reporter!",
+      "Your Eyes"
+    ],
+    "description": "시티팝의 전설 야마시타 타츠로의 대표작. 청량한 여름 감성이 가득한 명반.",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/3/33/Tatsuro_Yamashita_For_You.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Braziliance!",
+    "artist": "Marcos Valle",
+    "genre": "Bossa Nova",
+    "tracks": [
+      "Crickets Sing for Anamaria",
+      "So Nice (Summer Samba)",
+      "Chup Chup, I Got Away",
+      "The Face I Love",
+      "She Told Me, She Told Me",
+      "It's Not Easy",
+      "Brazilian Dorian Dream"
+    ],
+    "description": "보사노바 감성과 브라질리언 리듬이 살아있는 마르코스 발레의 대표작.",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/67/Marcos_Valle_-_Braziliance.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Blonde",
+    "artist": "Frank Ocean",
+    "genre": "R&B / Alternative",
+    "tracks": [
+      "Nikes",
+      "Ivy",
+      "Pink + White",
+      "Solo",
+      "Nights",
+      "White Ferrari",
+      "Seigfried",
+      "Godspeed"
+    ],
+    "description": "프랭크 오션의 감성과 실험성이 공존하는 수작. 시간의 흐름과 자아의 혼란을 담은 앨범.",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg"
+  },
+  {
+    "id": "6",
+    "title": "R",
+    "artist": "Rosé",
+    "genre": "Pop",
+    "tracks": [
+      "On The Ground",
+      "Gone"
+    ],
+    "description": "블랙핑크 로제의 첫 솔로 싱글 앨범. 내면의 목소리를 담은 감성적인 곡들.",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/9/9c/Ros%C3%A9_-_R.png"
   }
 ]
