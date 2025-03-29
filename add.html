@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Add New Album</title>
+  <title>Add Album from Discogs</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     #suggestions {
@@ -14,6 +14,7 @@
       background: white;
       z-index: 1000;
       width: 90%;
+      margin-top: -10px;
     }
     #suggestions div {
       padding: 5px;
@@ -22,76 +23,53 @@
     #suggestions div:hover {
       background-color: #eee;
     }
-    .disabled {
-      background-color: #aaa;
-      cursor: not-allowed;
-    }
   </style>
 </head>
 <body>
-  <h1>앨범 검색 후 추가</h1>
-  <p>앨범 제목이나 가수명을 입력하고, 검색된 항목을 선택해 주세요!</p>
+  <h1 onclick="window.location.href='index.html'">My LP Collection</h1>
+  <h2>🔍 앨범 검색 후 추가하기 (Discogs 연동)</h2>
   <form id="albumForm">
-    <input type="text" placeholder="Search by title or artist" id="titleSearch" autocomplete="off" required /><br />
+    <input type="text" placeholder="Search album title or artist" id="searchInput" autocomplete="off" required /><br />
     <div id="suggestions"></div>
-    <input type="text" placeholder="Title" id="title" disabled /><br />
-    <input type="text" placeholder="Artist" id="artist" disabled /><br />
-    <input type="text" placeholder="Genre" id="genre" disabled /><br />
-    <textarea placeholder="Description" id="description" disabled></textarea><br />
-    <input type="text" placeholder="Track list (comma-separated)" id="tracks" disabled /><br />
-    <input type="text" placeholder="Cover image URL" id="cover" disabled /><br />
-    <button type="submit" id="submitBtn" class="disabled" disabled>➕ Add Album</button>
+    <input type="text" placeholder="Title" id="title" required /><br />
+    <input type="text" placeholder="Artist" id="artist" required /><br />
+    <input type="text" placeholder="Genre" id="genre" /><br />
+    <textarea placeholder="Description" id="description"></textarea><br />
+    <input type="text" placeholder="Cover image URL" id="cover" /><br />
+    <input type="text" placeholder="Track list (optional)" id="tracks" /><br />
+    <button type="submit">➕ Add Album</button>
   </form>
   <a href="index.html">Back to Home</a>
 
   <script>
-    let allAlbums = [];
-
-    fetch('albums.json')
-      .then(response => response.json())
-      .then(data => {
-        const stored = JSON.parse(localStorage.getItem('customAlbums') || '[]');
-        allAlbums = [...data, ...stored];
-      });
-
-    const searchInput = document.getElementById('titleSearch');
+    const searchInput = document.getElementById('searchInput');
     const suggestions = document.getElementById('suggestions');
 
+    const DISCOGS_KEY = "dOcJVZJPgCAHoeNUCfdv";
+
     searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
-      const matches = allAlbums.filter(album =>
-        album.title.toLowerCase().includes(query) ||
-        album.artist.toLowerCase().includes(query)
-      );
-      suggestions.innerHTML = '';
-      if (query && matches.length > 0) {
-        matches.forEach(album => {
-          const div = document.createElement('div');
-          div.textContent = album.title + " — " + album.artist;
-          div.onclick = () => {
-            document.getElementById('title').value = album.title;
-            document.getElementById('artist').value = album.artist;
-            document.getElementById('genre').value = album.genre;
-            document.getElementById('description').value = album.description;
-            document.getElementById('tracks').value = album.tracks.join(', ');
-            document.getElementById('cover').value = album.cover;
-
-            // 활성화
-            ['title', 'artist', 'genre', 'description', 'tracks', 'cover'].forEach(id => {
-              document.getElementById(id).disabled = false;
-            });
-            const btn = document.getElementById('submitBtn');
-            btn.disabled = false;
-            btn.classList.remove('disabled');
-
-            suggestions.style.display = 'none';
-          };
-          suggestions.appendChild(div);
+      const query = searchInput.value;
+      if (!query) return;
+      fetch(`https://api.discogs.com/database/search?q=${encodeURIComponent(query)}&key=${DISCOGS_KEY}&per_page=5&type=release`)
+        .then(res => res.json())
+        .then(data => {
+          suggestions.innerHTML = '';
+          data.results.forEach(result => {
+            const div = document.createElement('div');
+            div.textContent = result.title;
+            div.onclick = () => {
+              document.getElementById('title').value = result.title;
+              document.getElementById('artist').value = result.artist || result.title.split(" - ")[0];
+              document.getElementById('genre').value = result.genre ? result.genre.join(", ") : '';
+              document.getElementById('cover').value = result.cover_image || '';
+              document.getElementById('description').value = result.style ? result.style.join(", ") : 'Discogs release';
+              document.getElementById('tracks').value = '';  // Discogs API에서 트랙리스트는 별도 호출 필요
+              suggestions.style.display = 'none';
+            };
+            suggestions.appendChild(div);
+          });
+          suggestions.style.display = 'block';
         });
-        suggestions.style.display = 'block';
-      } else {
-        suggestions.style.display = 'none';
-      }
     });
 
     document.getElementById('albumForm').addEventListener('submit', function(event) {
