@@ -4,11 +4,31 @@
   <meta charset="UTF-8" />
   <title>Add New Album</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    #suggestions {
+      border: 1px solid #ccc;
+      max-height: 150px;
+      overflow-y: auto;
+      display: none;
+      position: absolute;
+      background: white;
+      z-index: 1000;
+      width: 90%;
+    }
+    #suggestions div {
+      padding: 5px;
+      cursor: pointer;
+    }
+    #suggestions div:hover {
+      background-color: #eee;
+    }
+  </style>
 </head>
 <body>
   <h1>Add a New Album</h1>
   <form id="albumForm">
     <input type="text" placeholder="Title" id="title" required /><br />
+    <div id="suggestions"></div>
     <input type="text" placeholder="Artist" id="artist" required /><br />
     <input type="text" placeholder="Genre" id="genre" required /><br />
     <textarea placeholder="Description" id="description"></textarea><br />
@@ -19,9 +39,48 @@
   <a href="index.html">Back to Home</a>
 
   <script>
+    let allAlbums = [];
+
+    fetch('albums.json')
+      .then(response => response.json())
+      .then(data => {
+        const stored = JSON.parse(localStorage.getItem('customAlbums') || '[]');
+        allAlbums = [...data, ...stored];
+      });
+
+    const titleInput = document.getElementById('title');
+    const suggestions = document.getElementById('suggestions');
+
+    titleInput.addEventListener('input', () => {
+      const query = titleInput.value.toLowerCase();
+      const matches = allAlbums.filter(album =>
+        album.title.toLowerCase().includes(query) ||
+        album.artist.toLowerCase().includes(query)
+      );
+      suggestions.innerHTML = '';
+      if (query && matches.length > 0) {
+        matches.forEach(album => {
+          const div = document.createElement('div');
+          div.textContent = album.title + " — " + album.artist;
+          div.onclick = () => {
+            document.getElementById('title').value = album.title;
+            document.getElementById('artist').value = album.artist;
+            document.getElementById('genre').value = album.genre;
+            document.getElementById('description').value = album.description;
+            document.getElementById('tracks').value = album.tracks.join(', ');
+            document.getElementById('cover').value = album.cover;
+            suggestions.style.display = 'none';
+          };
+          suggestions.appendChild(div);
+        });
+        suggestions.style.display = 'block';
+      } else {
+        suggestions.style.display = 'none';
+      }
+    });
+
     document.getElementById('albumForm').addEventListener('submit', function(event) {
       event.preventDefault();
-
       const album = {
         id: Date.now().toString(),
         title: document.getElementById('title').value,
@@ -31,7 +90,6 @@
         tracks: document.getElementById('tracks').value.split(',').map(t => t.trim()),
         cover: document.getElementById('cover').value
       };
-
       const stored = JSON.parse(localStorage.getItem('customAlbums') || '[]');
       stored.push(album);
       localStorage.setItem('customAlbums', JSON.stringify(stored));
