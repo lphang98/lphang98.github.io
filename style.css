@@ -27,9 +27,9 @@ body {
 }
 
 .album:hover {
-  transform: scale(1.06);
-  background-color: #fffef2;
-  box-shadow: 0 0 24px rgba(255, 230, 130, 0.6);
+  transform: scale(1.05);
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .album img {
@@ -48,23 +48,7 @@ body {
   font-weight: bold;
 }
 
-.delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 4px 6px;
-  font-size: 0.75em;
-  border-radius: 4px;
-  cursor: pointer;
-  display: none;
-}
-
-.album:hover .delete-btn {
-  display: block;
-}
+/* 삭제 버튼 제거됨 */
 
 /* 장르 라벨 */
 .genre-label {
