@@ -54,5 +54,77 @@
       "지나간 여름을 안타까워마"
     ],
     "cover": "https://upload.wikimedia.org/wikipedia/en/f/fc/Wisue_Summer.jpg"
+  },
+  {
+    "title": "Kind of Blue",
+    "artist": "Miles Davis",
+    "genre": "Jazz",
+    "description": "재즈 역사상 가장 영향력 있는 앨범 중 하나. 즉흥성과 감성의 절묘한 조화.",
+    "tracks": [
+      "So What",
+      "Freddie Freeloader",
+      "Blue in Green",
+      "All Blues",
+      "Flamenco Sketches"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg"
+  },
+  {
+    "title": "For You",
+    "artist": "Tatsuro Yamashita",
+    "genre": "City Pop",
+    "description": "야마시타 타츠로의 대표작. 도시적인 감성과 여름의 따뜻함이 어우러진 시티팝의 정수.",
+    "tracks": [
+      "Sparkle",
+      "Music Book",
+      "Interlude A",
+      "Morning Glory",
+      "Interlude B",
+      "Futari",
+      "Loveland, Island",
+      "Interlude C",
+      "Love Talkin'",
+      "Hey Reporter!",
+      "Your Eyes"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/5/56/TatsuroYamashita_ForYou.jpg"
+  },
+  {
+    "title": "Braziliance!",
+    "artist": "Marcos Valle",
+    "genre": "Bossa Nova / Jazz",
+    "description": "마르코스 발레의 초기 명반. 브라질리언 리듬과 재즈의 세련된 조화.",
+    "tracks": [
+      "Crickets Sing for Anamaria",
+      "If You Went Away",
+      "Chup Chup, I Got Away",
+      "She Told Me, She Told Me",
+      "The Face I Love",
+      "So Nice (Summer Samba)",
+      "La Fin",
+      "Surprise",
+      "Batucada",
+      "Gente",
+      "Take Me to Aruanda",
+      "Maria Moita"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/8/84/MarcosValle_Braziliance.jpg"
+  },
+  {
+    "title": "Blonde",
+    "artist": "Frank Ocean",
+    "genre": "R&B / Alternative",
+    "description": "프랭크 오션의 감성과 실험성이 공존하는 수작. 시간의 흐름과 자아의 혼란을 담은 앨범.",
+    "tracks": [
+      "Nikes",
+      "Ivy",
+      "Pink + White",
+      "Solo",
+      "Nights",
+      "White Ferrari",
+      "Seigfried",
+      "Godspeed"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg"
   }
 ]
