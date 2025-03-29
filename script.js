@@ -32,18 +32,21 @@ function renderAlbums(albums) {
     };
 
     const genreColors = {
-      "Jazz": "#2b7a78",
-      "City Pop": "#d7263d",
-      "Pop": "#673ab7",
-      "R&B": "#ff5722",
-      "Alternative": "#ff5722",
-      "Bossa Nova": "#009688",
-      "Indie": "#607d8b",
-      "Folk": "#6d4c41",
-      "Live": "#3f51b5",
-      "K-pop": "#e91e63",
-      "Cover": "#9e9e9e"
-    };
+  "Jazz": "#1f77b4",
+  "Hard Bop": "#ff7f0e",
+  "City Pop": "#2ca02c",
+  "Pop": "#d62728",
+  "R&B": "#9467bd",
+  "Alternative": "#8c564b",
+  "Bossa Nova": "#17becf",
+  "Indie": "#e377c2",
+  "Folk": "#bcbd22",
+  "Live": "#7f7f7f",
+  "K-pop": "#f27ea9",
+  "Cover": "#c49c94",
+  "Funk": "#ff1493",
+  "Soul": "#ffa07a"
+};
     const genres = album.genre || [];
     const colors = genres.map(g => genreColors[g] || "#aaa");
     if (colors.length > 1) {
