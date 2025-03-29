@@ -253,5 +253,97 @@
       "My Sugar Babe (Reprise)"
     ],
     "cover": "https://upload.wikimedia.org/wikipedia/en/3/31/TatsuroYamashita_RideOnTime.jpg"
+  },
+  {
+    "title": "Blue Train",
+    "artist": "John Coltrane",
+    "genre": [
+      "Jazz"
+    ],
+    "description": "존 콜트레인의 대표작 중 하나로, 하드 밥의 정수를 보여주는 역사적인 앨범.",
+    "tracks": [
+      "Blue Train",
+      "Moment's Notice",
+      "Locomotion",
+      "I'm Old Fashioned",
+      "Lazy Bird"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/9/9c/John_Coltrane_-_Blue_Train.jpg"
+  },
+  {
+    "title": "For Django",
+    "artist": "Joe Pass",
+    "genre": [
+      "Jazz"
+    ],
+    "description": "기타리스트 조 패스가 장고 라인하르트를 오마주하며 만든 명반. 감성적인 재즈 기타 연주가 인상적이다.",
+    "tracks": [
+      "Django",
+      "Rosetta",
+      "Nuages",
+      "For Django",
+      "Night and Day",
+      "Fleur d'Ennui",
+      "Insensiblement",
+      "Cavalerie",
+      "Django's Castle",
+      "Limehouse Blues"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e2/Joe_Pass_For_Django.jpg"
+  },
+  {
+    "title": "Four: Chet Baker in Tokyo",
+    "artist": "Chet Baker",
+    "genre": [
+      "Jazz"
+    ],
+    "description": "1990년 일본 도쿄에서의 라이브 공연 실황 앨범. 쳇 베이커의 성숙한 연주와 보컬이 담긴 명연.",
+    "tracks": [
+      "Stella by Starlight",
+      "For Minors Only",
+      "Almost Blue",
+      "Portrait in Black and White",
+      "My Funny Valentine",
+      "Four",
+      "Arborway",
+      "There Will Never Be Another You"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/05/Chet_Baker_-_Four_in_Tokyo.jpg"
+  },
+  {
+    "title": "Memories / Four: Chet Baker in Tokyo",
+    "artist": "Chet Baker",
+    "genre": [
+      "Jazz",
+      "Live"
+    ],
+    "description": "Chet Baker in Tokyo의 또 다른 수록 곡들과 함께 편집된 특별반. 감성적인 트럼펫 사운드가 돋보인다.",
+    "tracks": [
+      "My Funny Valentine",
+      "Four",
+      "Almost Blue",
+      "Memories",
+      "Portrait in Black and White",
+      "Stella by Starlight"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/f/f3/Chet_Baker_Tokyo_Memories.jpg"
+  },
+  {
+    "title": "Moanin'",
+    "artist": "Art Blakey & The Jazz Messengers",
+    "genre": [
+      "Jazz",
+      "Hard Bop"
+    ],
+    "description": "하드 밥을 대표하는 명반. 타이틀곡 'Moanin''은 재즈 역사상 가장 사랑받는 곡 중 하나.",
+    "tracks": [
+      "Moanin'",
+      "Are You Real",
+      "Along Came Betty",
+      "The Drum Thunder Suite",
+      "Blues March",
+      "Come Rain or Come Shine"
+    ],
+    "cover": "https://upload.wikimedia.org/wikipedia/en/2/2b/Moanin%27_%28Art_Blakey_album%29.jpg"
   }
 ]
